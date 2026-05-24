@@ -31,15 +31,17 @@ public class Main {
         if (useSpecialcharacters && useNumbers){
             String useCharacters = letters + numbers + specialChars
             SecureRamdom ramdom = new SecureRandom(passwordlength);
+            print();
         }
 
         } else if (useNumbers) {
         String useCharacters = letters + numbers
         SecureRamdom ramdom = new SecureRandom(passwordlength);
+        print();
         }else {
         String useCharacters = letters
         SecureRamdom ramdom = new SecureRandom(passwordlength);
-    }
-
+        print();
+        }
     }
 }
