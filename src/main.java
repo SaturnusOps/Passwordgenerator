@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class main {
@@ -8,40 +8,36 @@ public class main {
         int passwordlength = scanner.nextInt();
         System.out.print("Would you like Numbers? (yes/no) :");
         boolean useNumbers = false;
-        String numbersincluded = scanner.nextLine.toLowerCase;
+        String numbersincluded = scanner.nextLine().toLowerCase();
         if (numbersincluded.equals("yes")) {
             useNumbers = true;
         } else {
             useNumbers = false;
         }
         System.out.print("Would you like Special characters? (yes/no) : ");
-        boolean useSpecialcharacters
-        String specialincluded = scanner.nextBoolean.toLowerCase;
+        boolean useSpecialcharacters;
+        String specialincluded = scanner.nextLine().toLowerCase();
         if (specialincluded.equals("yes")) {
             useSpecialcharacters = true;
         } else {
             useSpecialcharacters = false;
         }
-        scanner.close;
+        scanner.close();
 
         String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         String numbers = "0123456789";
-        String specialChars = "!@#$%^&*()-_=+[{]};:", "<>?";
+        String specialChars = "!§$%&/()=?{[]}`*+'#-_.:;,<>|^°@€";
 
         if (useSpecialcharacters && useNumbers){
-            String useCharacters = letters + numbers + specialChars
-            SecureRamdom ramdom = new SecureRandom(passwordlength);
-            print();
-        }
-
-        } else if (useNumbers) {
-        String useCharacters = letters + numbers
-        SecureRamdom ramdom = new SecureRandom(passwordlength);
-        print();
-        }else {
-        String useCharacters = letters
-        SecureRamdom ramdom = new SecureRandom(passwordlength);
-        print();
+            String useCharacters = letters + numbers + specialChars;
+            String[] password = new String[passwordlength];
+            SecureRandom random = new SecureRandom();
+            for (int i = 0; i < passwordlength; i++){
+                int randomIndex = random.nextInt(useCharacters.length());
+                char randomchar = useCharacters.charAt(randomIndex);
+                password[i] = String.valueOf(randomchar);
+            }
+            System.out.println(java.util.Arrays.toString(password));
         }
     }
 }
