@@ -39,7 +39,7 @@ public class main {
         }
 
         String donePassword = String.join("", password);
-        System.out.println(donePassword);
+        System.out.println("Your Password is: \n" + donePassword);
 
     }
 }
