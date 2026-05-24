@@ -38,7 +38,8 @@ public class main {
             password[i] = String.valueOf(randomchar);
         }
 
-        System.out.println(Arrays.toString(password));
+        String donePassword = String.join("", password);
+        System.out.println(donePassword);
 
     }
 }
